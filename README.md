@@ -6,7 +6,9 @@ This challendge was to create an application that an employee can use to generat
 ## Usage
 
 <a href="https://mardyyy.github.io/Martins-Java-Password-Generator-Challange-3/"> alt="Image of Java-Password-Generator-Challange-3"</a>
-Capture.PNG
+
+![Capture](https://user-images.githubusercontent.com/130259961/236324694-5aeb315a-b54e-4f5b-9533-42d699676e15.PNG)
+
 ## Credits
 
 https://github.com/coding-boot-camp/friendly-parakeet
