@@ -16,24 +16,111 @@ var upperCasedCharacters = ['QWERTYUIOPASDFGHJKLZXCVBNM '.split(
 
 // Function to prompt user for password options
 function getPasswordOptions() {
- 
+  getNumberAmount ();
+  getSpecialCharacters ();
+  getNumericCharacters ();
+  getLowerCharacters ();
+  getUpperCharacters ();
 };
 
+
+function getNumberAmount() {
+  var doc = prompt("Please enter some text",
+  "GeeksforGeeks");
+if (doc != null) {
+  document.getElementById("g").innerHTML =
+      "Welcome to " + doc;
+};
+};
+
+function getSpecialCharacters () {
+  const response = confirm("Do You want special characters in your password?");
+
+  if (response) {
+    // add code if the user pressed the Ok button
+    console.log("Ok was pressed");
+  } else {
+    // add code if the user pressed the Cancel button
+    console.log("Cancel was pressed");
+  };
+}
+
+function getNumericCharacters () {
+  const response = confirm("Do You want special characters in your password?");
+
+  if (response) {
+    // add code if the user pressed the Ok button
+    console.log("Ok was pressed");
+  } else {
+    // add code if the user pressed the Cancel button
+    console.log("Cancel was pressed");
+  };
+}
+
+function getLowerCharacters () {
+  const response = confirm("Do You want special characters in your password?");
+
+  if (response) {
+    // add code if the user pressed the Ok button
+    console.log("Ok was pressed");
+  } else {
+    // add code if the user pressed the Cancel button
+    console.log("Cancel was pressed");
+  };
+}
+
+function getUpperCharacters () {
+  const response = confirm("Do You want special characters in your password?");
+
+  if (response) {
+    // add code if the user pressed the Ok button
+    console.log("Ok was pressed");
+  } else {
+    // add code if the user pressed the Cancel button
+    console.log("Cancel was pressed");
+  };
+}
 // Funciton for getting a random element from an array
 function getRandom(arr) {};
 
 // Function to generate pasword withh user input
-function generatePassword() {}; 
+function generatePassword() {
+  // Basic Generator
+  var pass = '';
+  var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +
+  'abcdefghijklmnopqrstuvwxyz0123456789@#$';
+    
+  for (let i = 1; i <= 8; i++) {
+      var char = Math.floor(Math.random()
+                  * str.length + 1);
+        
+      pass += str.charAt(char)
+  }
+    
+  return pass;
+  
+  // My Generator:
+  // var pass = '';
+  // var str = specialCharacters + numericCharacters 
+  // + lowerCasedCharacters + upperCasedCharacters;
+    
+  // for (let i = 1; i <= getNumberAmount; i++) {
+  //     var char = Math.floor(Math.random()
+  //                 * str.length + 1);
+        
+  //     pass += str.charAt(char)
+  // }
+    
+  // return pass;
 
-var generatePassword = function () {};
-
-
+};
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
+  // getPasswordOptions();
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
@@ -63,3 +150,23 @@ generateBtn.addEventListener("click", writePassword);
 
 // // Add event listener to generate button
 // generateBtn.addEventListener("click", writePassword);
+
+
+
+// Notes:
+
+// Basic Random password generator::
+// function generatePassword() {
+//   var pass = '';
+//   var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +
+//           'abcdefghijklmnopqrstuvwxyz0123456789@#$';
+    
+//   for (let i = 1; i <= 8; i++) {
+//       var char = Math.floor(Math.random()
+//                   * str.length + 1);
+        
+//       pass += str.charAt(char)
+//   }
+    
+//   return pass;
+// };
