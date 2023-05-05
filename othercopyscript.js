@@ -1,10 +1,8 @@
-// Assignment code here
 // Questions:
-// - Prompt for not selecting any of the chacter types. loop back to getPasswordOptions, i get error that getPasswordOptions isn't a function.
-// - Prompt & function if/else for when character amount isnt 8-128.And how to code the range from 8-128. and loop back to start.
+// -Prompt & function if/else for when character amount isnt 8-128.And how to code the range from 8-128. and go back to start.
+// - Prompt for not selecting any of the chacter types. go back to getPasswordOptions, i get error that getPasswordOptions isn't a function.
 // - why do i need to refresh page to run generate password again. error.
 // - Turn in challenge
-
 
 var specialCharacters = [""];
 
@@ -27,44 +25,29 @@ function getPasswordOptions () {
 
 };
 
-function noCharacters () {
-  const response = confirm("You must chose at least one character group.");
-
-  if (response) {
-    return getPasswordOptions ();
-    
-  } else {
-    return;
-    
-  };
-};
-
-// function noNumbers () {
-//   const response = confirm("You must select a number from 8-128.");
+// function noCharacters () {
+//   const response = confirm("You must chose at least one character group.");
 
 //   if (response) {
-//   return getPasswordOptions ();
-  
+//     return getPasswordOptions ();
+    
 //   } else {
-//   return getPasswordOptions();
-  
+//     return;
+    
 //   };
 // };
 
-function getNumberAmount() {
-  n = Number(prompt("what character amount do you want for your password (8-128)?",
-  ""));
-  // if (n != (8 , 128)) {
-  //   const response = confirm("You must select a number from 8-128!");
 
-  //   if (response) {
-  //   return getPasswordOptions ();
-    
-  //   } else {
-  //   return;
-    
-  //   };
-  // };
+
+function getNumberAmount() {
+  var length = parseInt(prompt("what character amount do you want for your password (8-128)?"));
+  console.log("length",typeof length)
+  if (length < 8 || length > 128 ) {
+    const response = confirm("You must select a number from 8-128!");
+    // return;
+  } else {
+    return;
+  };
 
   };
   
@@ -116,15 +99,12 @@ function getUpperCharacters () {
   };
 }
 
-// Funciton for getting a random element from an array
-// function getRandom(arr) {};
-
 function generatePassword() {
   var pass = '';
   var str = specialCharacters + numericCharacters
    + lowerCasedCharacters + upperCasedCharacters;
 
-  for (let i = 1; i <= n; i++) {
+  for (let i = 1; i <= length; i++) {
       var char = Math.floor(Math.random() * str.length + 1);
       
       pass += str.charAt(char);
@@ -151,3 +131,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
